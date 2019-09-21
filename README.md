@@ -1,4 +1,4 @@
-# Algorithms
+# Algorithms and Data Structures
 
 A collection of common algorithms and data structures implemented in C++ using the C++11 standard.
 
