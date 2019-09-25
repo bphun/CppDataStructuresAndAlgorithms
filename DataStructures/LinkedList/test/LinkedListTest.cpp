@@ -151,7 +151,7 @@ TEST(LinkedListTest, addValueToSortedList)
     ll.addValueToSortedList(1);
     ll.addValueToSortedList(5);
 
-    Node<int> *currNode = ll.first();
+    LinkedListNode<int> *currNode = ll.first();
 
     while (currNode->next != nullptr)
     {
@@ -184,6 +184,82 @@ TEST(LinkedListTest, deleteNodewithValue_EmptyList)
 
     EXPECT_EQ(ll.first(), nullptr);
     EXPECT_EQ(ll.last(), nullptr);
+}
+
+TEST(LinkedListTest, deleteNodewithValue_LastValue)
+{
+    LinkedList<int> ll;
+
+    ll.append(1);
+    ll.append(2);
+    ll.append(3);
+
+    ll.deleteNodeWithValue(3);
+
+    EXPECT_EQ(ll.first()->data, 1);
+    EXPECT_EQ(ll.first()->next->data, 2);
+    EXPECT_EQ(ll.last()->data, 2);
+}
+
+TEST(LinkedListTest, deleteNode)
+{
+    LinkedList<int> ll;
+
+    ll.append(1);
+    ll.append(2);
+    ll.append(3);
+
+    EXPECT_EQ(ll.count(), 3);
+
+    ll.deleteNode(ll.first()->next);
+
+    EXPECT_EQ(ll.count(), 2);
+    EXPECT_EQ(ll.first()->data, 1);
+    EXPECT_EQ(ll.first()->next->data, 3);
+}
+
+TEST(LinkedListTest, deleteNode_EmptyList)
+{
+    LinkedList<int> ll;
+
+    ll.deleteNode(ll.first());
+
+    EXPECT_EQ(ll.count(), 0);
+}
+
+TEST(LinkedListTest, deleteNode_DeleteHead)
+{
+    LinkedList<int> ll;
+
+    ll.append(1);
+    ll.append(2);
+    ll.append(3);
+
+    EXPECT_EQ(ll.count(), 3);
+
+    ll.deleteNode(ll.first());
+
+    EXPECT_EQ(ll.count(), 2);
+    EXPECT_EQ(ll.first()->data, 2);
+    EXPECT_EQ(ll.first()->next->data, 3);
+}
+
+TEST(LinkedListTest, deleteNode_DeleteTail)
+{
+    LinkedList<int> ll;
+
+    ll.append(1);
+    ll.append(2);
+    ll.append(3);
+
+    EXPECT_EQ(ll.count(), 3);
+
+    ll.deleteNode(ll.last());
+
+    EXPECT_EQ(ll.count(), 2);
+    EXPECT_EQ(ll.first()->data, 1);
+    EXPECT_EQ(ll.first()->next->data, 2);
+    EXPECT_EQ(ll.last()->data, 2);
 }
 
 TEST(LinkedListTest, deleteHead)
@@ -273,7 +349,7 @@ TEST(LinkedListTest, sort)
 
     ll.sort();
 
-    Node<int> *currNode = ll.first();
+    LinkedListNode<int> *currNode = ll.first();
 
     while (currNode->next != nullptr)
     {

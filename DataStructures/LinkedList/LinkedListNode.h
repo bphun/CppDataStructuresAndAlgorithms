@@ -8,33 +8,33 @@
 using namespace std;
 
 template <typename T>
-struct Node
+struct LinkedListNode
 {
     T data;
-    Node<T> *next;
+    LinkedListNode<T> *next;
 
-    Node(T);
-    Node(const Node<T> &);
+    LinkedListNode(T);
+    LinkedListNode(const LinkedListNode<T> &);
 
-    Node<T> &operator=(const Node<T> &);
+    LinkedListNode<T> &operator=(const LinkedListNode<T> &);
 
     string toString();
 };
 
 template <typename T>
-Node<T>::Node(T value) : data(value), next(nullptr)
+LinkedListNode<T>::LinkedListNode(T value) : data(value), next(nullptr)
 {
 }
 
 template <typename T>
-Node<T>::Node(const Node<T> &newNode)
+LinkedListNode<T>::LinkedListNode(const LinkedListNode<T> &newNode)
 {
     this->data = newNode.data;
     this->next = newNode.next;
 }
 
 template <typename T>
-Node<T> &Node<T>::operator=(const Node<T> &toCopy)
+LinkedListNode<T> &LinkedListNode<T>::operator=(const LinkedListNode<T> &toCopy)
 {
     this->data = toCopy.data;
     this->next = toCopy.next;
@@ -43,7 +43,7 @@ Node<T> &Node<T>::operator=(const Node<T> &toCopy)
 }
 
 template <typename T>
-string Node<T>::toString()
+string LinkedListNode<T>::toString()
 {
     stringstream ss;
 
