@@ -143,3 +143,31 @@ TEST(HashTableTest, erase_EmptTable)
     EXPECT_EQ(hashTable.size(), 0);
     EXPECT_THROW(hashTable.erase("key"), std::out_of_range);
 }
+
+TEST(HashTableTest, clear)
+{
+    HashTable<string, string> hashTable;
+
+    hashTable.put("key1", "value1");
+
+    EXPECT_FALSE(hashTable.empty());
+    EXPECT_EQ(hashTable.size(), 1);
+    EXPECT_EQ(hashTable.get("key1"), "value1");
+
+    hashTable.put("key2", "value2");
+
+    EXPECT_FALSE(hashTable.empty());
+    EXPECT_EQ(hashTable.size(), 2);
+    EXPECT_EQ(hashTable.get("key2"), "value2");
+
+    hashTable.put("key3", "value3");
+
+    EXPECT_FALSE(hashTable.empty());
+    EXPECT_EQ(hashTable.size(), 3);
+    EXPECT_EQ(hashTable.get("key3"), "value3");
+
+    hashTable.clear();
+
+    EXPECT_EQ(hashTable.bucketCount(), 0);
+    EXPECT_EQ(hashTable.size(), 0);
+}

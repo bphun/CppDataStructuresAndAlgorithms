@@ -19,7 +19,7 @@ class HashTable
     size_t numValues = 0;
 
     size_t generateHashForKey(const KeyType &) const;
-    size_t getIndexForKey(const KeyType&) const;
+    size_t getIndexForKey(const KeyType &) const;
 
 public:
     ~HashTable();
@@ -59,7 +59,7 @@ size_t HashTable<KeyType, ValueType>::generateHashForKey(const KeyType &key) con
 }
 
 template <typename KeyType, typename ValueType>
-size_t HashTable<KeyType, ValueType>::getIndexForKey(const KeyType& key) const
+size_t HashTable<KeyType, ValueType>::getIndexForKey(const KeyType &key) const
 {
     return this->generateHashForKey(key) % TABLE_SIZE;
 }
@@ -141,7 +141,7 @@ void HashTable<KeyType, ValueType>::put(const KeyType &key, const ValueType &val
         auto keyValuePair = std::make_tuple(key, value);
 
         currNode = new LinkedListNode<tuple<KeyType, ValueType>>(keyValuePair);
-        
+
         numValues++;
     }
     else
@@ -203,8 +203,17 @@ template <typename KeyType, typename ValueType>
 void HashTable<KeyType, ValueType>::clear()
 {
     for (int i = 0; i < numBuckets; i++)
+    {
         if (table[i] != nullptr)
+        {
             table[i]->deleteAll();
+            delete table[i];
+            table[i] = nullptr;
+        }
+    }
+
+    numBuckets = 0;
+    numValues = 0;
 }
 
 template <typename KeyType, typename ValueType>
