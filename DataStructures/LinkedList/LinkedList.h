@@ -119,8 +119,7 @@ void LinkedList<T>::addValueToSortedList(const T &value)
         }
     }
 }
-#include <iostream>
-using namespace std;
+
 template <typename T>
 void LinkedList<T>::deleteNodeWithValue(const T &value)
 {
