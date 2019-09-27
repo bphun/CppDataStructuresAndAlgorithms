@@ -11,7 +11,7 @@ class Queue
 
 public:
 
-    bool empty();
+    bool empty() const;
 
     size_t size() const;
 
@@ -23,7 +23,7 @@ public:
 };
 
 template <typename T>
-bool Queue<T>::empty()
+bool Queue<T>::empty() const
 {
     return !linkedList.first();
 }

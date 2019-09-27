@@ -10,7 +10,7 @@ class Stack
     LinkedList<T> linkedList;
 
 public:
-    T top();
+    T top() const;
 
     void push(const T &);
     void pop();
@@ -20,7 +20,7 @@ public:
 };
 
 template <typename T>
-T Stack<T>::top()
+T Stack<T>::top() const
 {
     return linkedList.first()->data;
 }

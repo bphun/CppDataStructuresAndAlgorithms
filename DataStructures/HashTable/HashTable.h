@@ -30,7 +30,7 @@ public:
 
     // ValueType &operator[](const KeyType &);
     // ValueType &at(const KeyType &);
-    ValueType &get(const KeyType &);
+    ValueType &get(const KeyType &) const;
     void put(const KeyType &, const ValueType &);
 
     size_t count(const KeyType &) const;
@@ -100,7 +100,7 @@ size_t HashTable<KeyType, ValueType>::size() const
 // }
 
 template <typename KeyType, typename ValueType>
-ValueType &HashTable<KeyType, ValueType>::get(const KeyType &key)
+ValueType &HashTable<KeyType, ValueType>::get(const KeyType &key) const
 {
     if (numBuckets == 0 || numValues == 0)
         throw std::out_of_range("No values in table to get");
