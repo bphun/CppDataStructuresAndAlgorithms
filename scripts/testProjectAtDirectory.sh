@@ -18,4 +18,8 @@ testName=`echo $PWD | rev | cut -d '/' -f2 | rev`Test
 
 ./$testName
 
+if [[ "$?" -eq "1" ]]; then
+    exit 1
+fi
+
 cd $homeDir
