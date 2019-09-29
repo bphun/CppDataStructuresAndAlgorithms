@@ -1,5 +1,7 @@
 # Algorithms and Data Structures
 
+[![Build Status](https://travis-ci.org/bphun/CppDataStructuresAndAlgorithms.svg?branch=master)](https://travis-ci.org/bphun/CppDataStructuresAndAlgorithms)
+
 A collection of common algorithms and data structures implemented in C++ using the C++11 standard.
 
 ## Building Tests
