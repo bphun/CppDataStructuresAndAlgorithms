@@ -5,6 +5,6 @@ datastructuresAndAlgorithms:
         packages:
           - cmake-3.15.2
           - g++-4.2.1
-      language: cpp
-      script:
-        - ./scripts/testAll.sh
+    - language: cpp
+    - script:
+      - ./scripts/testAll.sh
