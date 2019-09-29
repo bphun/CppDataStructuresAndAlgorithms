@@ -20,9 +20,13 @@ runAction () {
     else
         $action $currDirectory
     fi
+
+    if [[ "$?" -eq "1" ]]; then
+        exit 1
+    fi
 }
 
-for i in src/*/*
+for i in algorithms/*/*
 do
     currDirectory=$i
     runAction
