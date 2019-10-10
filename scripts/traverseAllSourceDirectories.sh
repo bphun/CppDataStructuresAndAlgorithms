@@ -3,15 +3,20 @@
 action=$1
 homeDirectory=$PWD
 currDirectory=''
+kernel=`uname`
 
-if [[ -z $action ]]; then
-    echo "No action specified"
-    exit 0
-fi
+# if [[ -z $action ]]; then
+#     echo "No action specified"
+#     exit 0
+# fi
 
 if [ "$2" == "-p" ] || [ "$2" == "--parallel" ]; then
     parallelExec=true
-    numCpuThreads=`grep -c ^processor /proc/cpuinfo`
+    if [ "$kernel" == "linux" ]; then
+        numCpuThreads=`grep -c ^processor /proc/cpuinfo`
+    elif [ "$kernel" == "darwin" ]; then
+        numCpuThreads=`sysctl -n hw.ncpu`
+    fi
 fi
 
 runAction () {
@@ -32,12 +37,12 @@ do
     runAction
 done
 
-for i in DataStructures/*
+for i in dataStructures/*
 do
-  if [ "$i" == "DataStructures/Tree" ]; then
+  if [ "$i" == "dataStructures/Tree" ]; then
     for d in $i/*
     do
-        currDirectory=$d
+        currDirectory=$i$d
         runAction
     done
     continue
