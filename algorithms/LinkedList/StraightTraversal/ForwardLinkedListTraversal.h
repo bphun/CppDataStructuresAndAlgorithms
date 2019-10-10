@@ -3,12 +3,8 @@
 #include "../../../dataStructures/LinkedList/LinkedList.h"
 #include "../../../dataStructures/LinkedList/LinkedListNode.h"
 
-#ifdef TEST
-#include <iostream>
-#endif
-
 template <typename T>
-void forwardTraversal(const LinkedList<T>& ll, void (* callback)(int)) {
+void forwardTraversal(const LinkedList<T>& ll, void (* callback)(int) = nullptr) {
     LinkedListNode<T>* currNode = ll.first();
 
     while (currNode != nullptr)
@@ -16,7 +12,7 @@ void forwardTraversal(const LinkedList<T>& ll, void (* callback)(int)) {
         currNode = currNode->next;
         
         #ifdef TEST
-        if (currNode)
+        if (currNode && callback)
             callback(currNode->data);
         #endif
     }
