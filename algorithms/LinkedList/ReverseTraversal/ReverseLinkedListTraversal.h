@@ -1,4 +1,5 @@
 #ifndef ReverseLinkedListTraversal_h
+#define ReverseLinkedListTraversal_h
 
 #include "../../../dataStructures/LinkedList/LinkedList.h"
 #include "../../../dataStructures/LinkedList/LinkedListNode.h"

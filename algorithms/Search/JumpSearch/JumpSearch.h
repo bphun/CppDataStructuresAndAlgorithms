@@ -1,4 +1,5 @@
 #ifndef JumpSearch_h
+#define JumpSearch_h
 
 #include <math.h>
 #include <vector>

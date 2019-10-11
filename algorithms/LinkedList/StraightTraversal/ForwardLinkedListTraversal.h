@@ -1,4 +1,5 @@
 #ifndef ForwardLinkedListTraversal_h
+#define ForwardLinkedListTraversal_h
 
 #include "../../../dataStructures/LinkedList/LinkedList.h"
 #include "../../../dataStructures/LinkedList/LinkedListNode.h"
