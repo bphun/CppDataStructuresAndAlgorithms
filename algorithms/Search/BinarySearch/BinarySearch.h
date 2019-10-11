@@ -1,4 +1,5 @@
 #ifndef BinarySearch_h
+#define BinarySearch_h
 
 #include <vector>
 

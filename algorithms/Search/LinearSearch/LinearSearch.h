@@ -1,4 +1,5 @@
 #ifndef LinearSearch_h
+#define LinearSearch_h
 
 #include <vector>
 

@@ -1,4 +1,5 @@
 #ifndef InterpolationSearch_h
+#define InterpolationSearch_h
 
 #include <vector>
 
