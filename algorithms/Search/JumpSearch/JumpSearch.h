@@ -1,12 +1,12 @@
 #ifndef JumpSearch_h
 
-#include <vector>
 #include <math.h>
+#include <vector>
 
 using namespace std;
 
 template <typename T>
-bool jumpSearch(T arr[], const T &searchVal, const size_t &arrSize)
+bool jumpSearch(T arr[], const T& searchVal, const size_t& arrSize)
 {
     if (arrSize == 0)
         return false;
@@ -14,8 +14,7 @@ bool jumpSearch(T arr[], const T &searchVal, const size_t &arrSize)
     size_t stepSize = sqrt(arrSize);
     size_t prev = 0;
 
-    while (arr[min(stepSize, arrSize) - 1] < searchVal)
-    {
+    while (arr[min(stepSize, arrSize) - 1] < searchVal) {
         prev = stepSize;
         stepSize += sqrt(arrSize);
 
@@ -23,8 +22,7 @@ bool jumpSearch(T arr[], const T &searchVal, const size_t &arrSize)
             return false;
     }
 
-    while (arr[prev] < searchVal)
-    {
+    while (arr[prev] < searchVal) {
         prev++;
 
         if (prev == min(stepSize, arrSize))
@@ -38,7 +36,7 @@ bool jumpSearch(T arr[], const T &searchVal, const size_t &arrSize)
 }
 
 template <typename T>
-bool jumpSearch(T **arr, const T &searchVal, const size_t &arrSize)
+bool jumpSearch(T** arr, const T& searchVal, const size_t& arrSize)
 {
     if (arrSize == 0)
         return false;
@@ -46,8 +44,7 @@ bool jumpSearch(T **arr, const T &searchVal, const size_t &arrSize)
     size_t stepSize = sqrt(arrSize);
     int prev = 0;
 
-    while (*arr[min(stepSize, arrSize) - 1] < searchVal)
-    {
+    while (*arr[min(stepSize, arrSize) - 1] < searchVal) {
         prev = stepSize;
         stepSize += sqrt(arrSize);
 
@@ -55,8 +52,7 @@ bool jumpSearch(T **arr, const T &searchVal, const size_t &arrSize)
             return false;
     }
 
-    while (*arr[prev] < searchVal)
-    {
+    while (*arr[prev] < searchVal) {
         prev++;
 
         if (prev == min(stepSize, arrSize))
@@ -79,8 +75,7 @@ bool jumpSearch(vector<T> arr, T searchVal)
     size_t stepSize = sqrt(arrSize);
     int prev = 0;
 
-    while (arr[min(stepSize, arrSize) - 1] < searchVal)
-    {
+    while (arr[min(stepSize, arrSize) - 1] < searchVal) {
         prev = stepSize;
         stepSize += sqrt(arrSize);
 
@@ -88,14 +83,11 @@ bool jumpSearch(vector<T> arr, T searchVal)
             return false;
     }
 
-    while (arr[prev] < searchVal)
-    {
+    while (arr[prev] < searchVal) {
         prev++;
 
         if (prev == min(stepSize, arrSize))
-        {
             return false;
-        }
     }
 
     if (arr[prev] == searchVal)

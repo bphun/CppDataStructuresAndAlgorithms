@@ -6,24 +6,23 @@
 using namespace std;
 
 template <typename T>
-class DoublyLinkedList
-{
+class DoublyLinkedList {
 
-    DoublyLinkedListNode<T> *head = nullptr;
-    DoublyLinkedListNode<T> *tail = nullptr;
+    DoublyLinkedListNode<T>* head = nullptr;
+    DoublyLinkedListNode<T>* tail = nullptr;
     size_t size = 0;
 
 public:
     void prepend(T);
-    void append(const T &);
+    void append(const T&);
 
-    void removeNodeWithValue(const T &);
+    void removeNodeWithValue(const T&);
     void removeHead();
     void removeTail();
     void removeAll();
 
-    DoublyLinkedListNode<T> *first() const;
-    DoublyLinkedListNode<T> *last() const;
+    DoublyLinkedListNode<T>* first() const;
+    DoublyLinkedListNode<T>* last() const;
     size_t count() const;
 
     void print();
@@ -32,12 +31,11 @@ public:
 template <typename T>
 void DoublyLinkedList<T>::prepend(T value)
 {
-    DoublyLinkedListNode<T> *newNode = new DoublyLinkedListNode<T>(value);
+    DoublyLinkedListNode<T>* newNode = new DoublyLinkedListNode<T>(value);
 
     size++;
 
-    if (head == nullptr)
-    {
+    if (head == nullptr) {
         head = newNode;
         tail = newNode;
         return;
@@ -50,14 +48,13 @@ void DoublyLinkedList<T>::prepend(T value)
 }
 
 template <typename T>
-void DoublyLinkedList<T>::append(const T &value)
+void DoublyLinkedList<T>::append(const T& value)
 {
-    DoublyLinkedListNode<T> *newNode = new DoublyLinkedListNode<T>(value);
+    DoublyLinkedListNode<T>* newNode = new DoublyLinkedListNode<T>(value);
 
     size++;
 
-    if (head == nullptr)
-    {
+    if (head == nullptr) {
         head = newNode;
         tail = newNode;
         return;
@@ -69,12 +66,12 @@ void DoublyLinkedList<T>::append(const T &value)
 }
 
 template <typename T>
-void DoublyLinkedList<T>::removeNodeWithValue(const T &value)
+void DoublyLinkedList<T>::removeNodeWithValue(const T& value)
 {
     if (head == nullptr)
         return;
 
-    DoublyLinkedListNode<T> *currNode = head;
+    DoublyLinkedListNode<T>* currNode = head;
 
     while (currNode != nullptr && currNode->data != value)
         currNode = currNode->next;
@@ -90,7 +87,7 @@ void DoublyLinkedList<T>::removeNodeWithValue(const T &value)
 
     if (tail == currNode)
         tail = currNode->prev;
-        
+
     delete currNode;
 
     size--;
@@ -102,7 +99,7 @@ void DoublyLinkedList<T>::removeHead()
     if (head == nullptr)
         return;
 
-    DoublyLinkedListNode<T> *newHead = head->next;
+    DoublyLinkedListNode<T>* newHead = head->next;
     newHead->prev = nullptr;
 
     delete head;
@@ -117,7 +114,7 @@ void DoublyLinkedList<T>::removeTail()
     if (tail == nullptr)
         return;
 
-    DoublyLinkedListNode<T> *newTail = tail->prev;
+    DoublyLinkedListNode<T>* newTail = tail->prev;
 
     delete tail;
 
@@ -133,11 +130,10 @@ void DoublyLinkedList<T>::removeAll()
     if (head == nullptr)
         return;
 
-    DoublyLinkedListNode<T> *currNode = head;
-    DoublyLinkedListNode<T> *nextNode = nullptr;
+    DoublyLinkedListNode<T>* currNode = head;
+    DoublyLinkedListNode<T>* nextNode = nullptr;
 
-    while (currNode->data != nullptr)
-    {
+    while (currNode->data != nullptr) {
         nextNode = currNode->next;
         delete currNode;
         currNode = nextNode;
@@ -153,13 +149,13 @@ void DoublyLinkedList<T>::removeAll()
 }
 
 template <typename T>
-DoublyLinkedListNode<T> *DoublyLinkedList<T>::first() const
+DoublyLinkedListNode<T>* DoublyLinkedList<T>::first() const
 {
     return head;
 }
 
 template <typename T>
-DoublyLinkedListNode<T> *DoublyLinkedList<T>::last() const
+DoublyLinkedListNode<T>* DoublyLinkedList<T>::last() const
 {
     return tail;
 }
@@ -173,10 +169,9 @@ size_t DoublyLinkedList<T>::count() const
 template <typename T>
 void DoublyLinkedList<T>::print()
 {
-    DoublyLinkedListNode<T> *currentNode = head;
+    DoublyLinkedListNode<T>* currentNode = head;
 
-    while (currentNode != nullptr)
-    {
+    while (currentNode != nullptr) {
         printf("%d <-> ", currentNode->data);
         currentNode = currentNode->next;
     }

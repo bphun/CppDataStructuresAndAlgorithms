@@ -4,15 +4,14 @@
 #include "Heap.h"
 
 template <typename T>
-class MinHeap : public Heap<T>
-{
+class MinHeap : public Heap<T> {
 
 public:
-    bool pairIsInCorrectOrder(const T &, const T &);
+    bool pairIsInCorrectOrder(const T&, const T&);
 };
 
 template <typename T>
-bool MinHeap<T>::pairIsInCorrectOrder(const T &valueOne, const T &valueTwo)
+bool MinHeap<T>::pairIsInCorrectOrder(const T& valueOne, const T& valueTwo)
 {
     return valueOne <= valueTwo;
 }

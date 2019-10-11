@@ -1,12 +1,12 @@
-#include "gtest/gtest.h"
 #include "../HashTable.h"
+#include "gtest/gtest.h"
 
-#include <string>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
@@ -72,8 +72,7 @@ TEST(HashTableTest, put_LargeList)
 
     const size_t maxElements = 900000;
 
-    for (int i = 0; i < maxElements; i++)
-    {
+    for (int i = 0; i < maxElements; i++) {
         hashTable.put("key", "value");
 
         EXPECT_EQ(hashTable.bucketCount(), 1);

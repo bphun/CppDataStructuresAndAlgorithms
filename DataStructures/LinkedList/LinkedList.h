@@ -4,45 +4,43 @@
 #include "LinkedListNode.h"
 
 template <typename T>
-class LinkedList
-{
+class LinkedList {
 
-    LinkedListNode<T> *head = nullptr;
-    LinkedListNode<T> *tail = nullptr;
+    LinkedListNode<T>* head = nullptr;
+    LinkedListNode<T>* tail = nullptr;
     size_t size = 0;
 
     static constexpr bool typeIsArithmetic = is_arithmetic<T>::value;
 
 public:
-    void append(const T &);
-    void prepend(const T &);
-    void addValueToSortedList(const T &);
+    void append(const T&);
+    void prepend(const T&);
+    void addValueToSortedList(const T&);
 
-    void deleteNodeWithValue(const T &);
-    void deleteNode(LinkedListNode<T> *);
+    void deleteNodeWithValue(const T&);
+    void deleteNode(LinkedListNode<T>*);
     void deleteHead();
     void deleteTail();
     void deleteAll();
 
     void sort();
 
-    LinkedListNode<T> *first() const;
-    LinkedListNode<T> *last() const;
+    LinkedListNode<T>* first() const;
+    LinkedListNode<T>* last() const;
     size_t count() const;
 
     void print();
 };
 
 template <typename T>
-void LinkedList<T>::append(const T &value)
+void LinkedList<T>::append(const T& value)
 {
-    LinkedListNode<T> *newNode = new LinkedListNode<T>(value);
+    LinkedListNode<T>* newNode = new LinkedListNode<T>(value);
 
     size++;
 
     //  The linked list is empty so make the new node the head of the linked list and return
-    if (head == nullptr)
-    {
+    if (head == nullptr) {
         head = newNode;
         tail = head;
         return;
@@ -54,14 +52,13 @@ void LinkedList<T>::append(const T &value)
 }
 
 template <typename T>
-void LinkedList<T>::prepend(const T &value)
+void LinkedList<T>::prepend(const T& value)
 {
-    LinkedListNode<T> *newNode = new LinkedListNode<T>(value);
+    LinkedListNode<T>* newNode = new LinkedListNode<T>(value);
 
     size++;
 
-    if (head == nullptr)
-    {
+    if (head == nullptr) {
         head = newNode;
         tail = head;
         return;
@@ -72,22 +69,19 @@ void LinkedList<T>::prepend(const T &value)
 }
 
 template <typename T>
-void LinkedList<T>::addValueToSortedList(const T &value)
+void LinkedList<T>::addValueToSortedList(const T& value)
 {
     static_assert(typeIsArithmetic, "T must be an arithmetic datatype in order to be sorted");
 
-    LinkedListNode<T> *newNode = new LinkedListNode<T>(value);
+    LinkedListNode<T>* newNode = new LinkedListNode<T>(value);
 
     size++;
 
-    if (head == nullptr)
-    {
+    if (head == nullptr) {
         //  List is empty so make the new node the head of the linked list
         head = newNode;
         tail = head;
-    }
-    else if (newNode->data < head->data)
-    {
+    } else if (newNode->data < head->data) {
         /*
         * The new node's value is less than head's value so insert
         * it into the linked list before head and make the new node the head
@@ -95,25 +89,20 @@ void LinkedList<T>::addValueToSortedList(const T &value)
 
         newNode->next = head;
         head = newNode;
-    }
-    else
-    {
+    } else {
         /*
         * The new node's value is greater than head so find an appropriate
         * spot to insert the new node
         */
 
-        LinkedListNode<T> *currentNode = head;
+        LinkedListNode<T>* currentNode = head;
 
         while (currentNode->next != nullptr && currentNode->next->data < newNode->data)
             currentNode = currentNode->next;
 
-        if (currentNode->next == nullptr)
-        {
+        if (currentNode->next == nullptr) {
             currentNode->next = newNode;
-        }
-        else
-        {
+        } else {
             newNode->next = currentNode->next;
             currentNode->next = newNode;
         }
@@ -121,37 +110,31 @@ void LinkedList<T>::addValueToSortedList(const T &value)
 }
 
 template <typename T>
-void LinkedList<T>::deleteNodeWithValue(const T &value)
+void LinkedList<T>::deleteNodeWithValue(const T& value)
 {
     if (head == nullptr)
         return;
 
-    LinkedListNode<T> *currentNode = head;
-    LinkedListNode<T> *previousNode = nullptr;
+    LinkedListNode<T>* currentNode = head;
+    LinkedListNode<T>* previousNode = nullptr;
 
     //  Search for the node with the same data as value
-    while (currentNode != nullptr && currentNode->data != value)
-    {
+    while (currentNode != nullptr && currentNode->data != value) {
         previousNode = currentNode;
         currentNode = currentNode->next;
     }
 
-    if (previousNode != nullptr)
-    {
+    if (previousNode != nullptr) {
         //  Remove node that is neither head or tail
         // *(previousNode->next) = *(currentNode->next);
         previousNode->next = currentNode->next;
-        
+
         if (currentNode == tail)
             tail = previousNode;
-    }
-    else if (currentNode->next != nullptr && previousNode == nullptr)
-    {
+    } else if (currentNode->next != nullptr && previousNode == nullptr) {
         //  Removing first node of list
         head = currentNode->next;
-    }
-    else
-    {
+    } else {
         //  List only had one element so set head and tail to nullptr
         head = nullptr;
         tail = nullptr;
@@ -163,7 +146,7 @@ void LinkedList<T>::deleteNodeWithValue(const T &value)
 }
 
 template <typename T>
-void LinkedList<T>::deleteNode(LinkedListNode<T> *node)
+void LinkedList<T>::deleteNode(LinkedListNode<T>* node)
 {
     this->deleteNodeWithValue(node->data);
 }
@@ -174,7 +157,7 @@ void LinkedList<T>::deleteHead()
     if (head == nullptr)
         return;
 
-    LinkedListNode<T> *newHead = head->next;
+    LinkedListNode<T>* newHead = head->next;
 
     delete head;
 
@@ -189,7 +172,7 @@ void LinkedList<T>::deleteTail()
     if (head == nullptr)
         return;
 
-    LinkedListNode<T> *currNode = head;
+    LinkedListNode<T>* currNode = head;
 
     while (currNode->next != tail)
         currNode = currNode->next;
@@ -205,12 +188,11 @@ void LinkedList<T>::deleteTail()
 template <typename T>
 void LinkedList<T>::deleteAll()
 {
-    LinkedListNode<T> *currentNode = head;
-    LinkedListNode<T> *next = nullptr;
+    LinkedListNode<T>* currentNode = head;
+    LinkedListNode<T>* next = nullptr;
 
     //  Iterate through the linked list and remove each node
-    while (currentNode != nullptr)
-    {
+    while (currentNode != nullptr) {
         next = currentNode->next;
         delete currentNode;
         currentNode = next;
@@ -230,12 +212,11 @@ void LinkedList<T>::sort()
 
     static_assert(typeIsArithmetic, "T must be an arithmetic datatype in order to be sorted");
 
-    LinkedListNode<T> *currentNode = head;
-    LinkedListNode<T> *nextNode = nullptr;
-    LinkedListNode<T> *pivotNode = nullptr;
+    LinkedListNode<T>* currentNode = head;
+    LinkedListNode<T>* nextNode = nullptr;
+    LinkedListNode<T>* pivotNode = nullptr;
 
-    while (currentNode->next != nullptr)
-    {
+    while (currentNode->next != nullptr) {
 
         nextNode = currentNode->next;
         pivotNode = currentNode;
@@ -244,8 +225,7 @@ void LinkedList<T>::sort()
         * Iterate through every node after currentNode and find a node 
         * that contains a value that is smaller than the pivot's value
         */
-        while (nextNode != nullptr)
-        {
+        while (nextNode != nullptr) {
             if (pivotNode->data > nextNode->data)
                 pivotNode = nextNode;
 
@@ -262,13 +242,13 @@ void LinkedList<T>::sort()
 }
 
 template <typename T>
-LinkedListNode<T> *LinkedList<T>::first() const
+LinkedListNode<T>* LinkedList<T>::first() const
 {
     return head;
 }
 
 template <typename T>
-LinkedListNode<T> *LinkedList<T>::last() const
+LinkedListNode<T>* LinkedList<T>::last() const
 {
     return tail;
 }
@@ -282,10 +262,9 @@ size_t LinkedList<T>::count() const
 template <typename T>
 void LinkedList<T>::print()
 {
-    LinkedListNode<T> *currentNode = head;
+    LinkedListNode<T>* currentNode = head;
 
-    while (currentNode != nullptr)
-    {
+    while (currentNode != nullptr) {
         printf("%s -> ", currentNode->toString().c_str());
         currentNode = currentNode->next;
     }

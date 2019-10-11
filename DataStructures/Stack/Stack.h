@@ -4,15 +4,14 @@
 #include "../LinkedList/LinkedList.h"
 
 template <typename T>
-class Stack
-{
+class Stack {
 
     LinkedList<T> linkedList;
 
 public:
     T top() const;
 
-    void push(const T &);
+    void push(const T&);
     void pop();
 
     size_t size() const;
@@ -26,7 +25,7 @@ T Stack<T>::top() const
 }
 
 template <typename T>
-void Stack<T>::push(const T &value)
+void Stack<T>::push(const T& value)
 {
     linkedList.prepend(value);
 }

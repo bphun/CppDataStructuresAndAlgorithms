@@ -5,7 +5,7 @@
 using namespace std;
 
 template <typename T>
-bool interpolationSearch(T arr[], const T &searchVal, const size_t &arrSize)
+bool interpolationSearch(T arr[], const T& searchVal, const size_t& arrSize)
 {
     if (arrSize == 0)
         return false;
@@ -13,10 +13,8 @@ bool interpolationSearch(T arr[], const T &searchVal, const size_t &arrSize)
     size_t start = 0;
     size_t end = arrSize - 1;
 
-    while (start <= end && searchVal >= arr[start] && searchVal <= arr[end])
-    {
-        if (start == end)
-        {
+    while (start <= end && searchVal >= arr[start] && searchVal <= arr[end]) {
+        if (start == end) {
             if (arr[start] == searchVal)
                 return true;
 
@@ -28,17 +26,18 @@ bool interpolationSearch(T arr[], const T &searchVal, const size_t &arrSize)
         if (arr[index] == searchVal)
             return true;
 
-        if (arr[index] < searchVal)
+        if (arr[index] < searchVal) {
             start = index + 1;
-        else
+        } else {
             end = index - 1;
+        }
     }
 
     return false;
 }
 
 template <typename T>
-bool interpolationSearch(T **arr, const T &searchVal, const size_t &arrSize)
+bool interpolationSearch(T** arr, const T& searchVal, const size_t& arrSize)
 {
     if (arrSize == 0)
         return false;
@@ -46,10 +45,8 @@ bool interpolationSearch(T **arr, const T &searchVal, const size_t &arrSize)
     size_t start = 0;
     size_t end = arrSize - 1;
 
-    while (start <= end && searchVal >= *arr[start] && searchVal <= *arr[end])
-    {
-        if (start == end)
-        {
+    while (start <= end && searchVal >= *arr[start] && searchVal <= *arr[end]) {
+        if (start == end) {
             if (*arr[start] == searchVal)
                 return true;
 
@@ -61,10 +58,11 @@ bool interpolationSearch(T **arr, const T &searchVal, const size_t &arrSize)
         if (*arr[index] == searchVal)
             return true;
 
-        if (*arr[index] < searchVal)
+        if (*arr[index] < searchVal) {
             start = index + 1;
-        else
+        } else {
             end = index - 1;
+        }
     }
 
     return false;
@@ -79,10 +77,8 @@ bool interpolationSearch(vector<T> arr, T searchVal)
     size_t start = 0;
     size_t end = arr.size() - 1;
 
-    while (start <= end && searchVal >= arr[start] && searchVal <= arr[end])
-    {
-        if (start == end)
-        {
+    while (start <= end && searchVal >= arr[start] && searchVal <= arr[end]) {
+        if (start == end) {
             if (arr[start] == searchVal)
                 return true;
 
@@ -94,10 +90,11 @@ bool interpolationSearch(vector<T> arr, T searchVal)
         if (arr[index] == searchVal)
             return true;
 
-        if (arr[index] < searchVal)
+        if (arr[index] < searchVal) {
             start = index + 1;
-        else
+        } else {
             end = index - 1;
+        }
     }
 
     return false;

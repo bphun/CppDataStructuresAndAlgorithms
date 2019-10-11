@@ -4,13 +4,11 @@
 #include "../LinkedList/LinkedList.h"
 
 template <typename T>
-class Queue
-{
+class Queue {
 
     LinkedList<T> linkedList;
 
 public:
-
     bool empty() const;
 
     size_t size() const;
@@ -19,7 +17,7 @@ public:
     T& back() const;
     void pop();
 
-    void push(const T &);
+    void push(const T&);
 };
 
 template <typename T>
@@ -53,7 +51,7 @@ void Queue<T>::pop()
 }
 
 template <typename T>
-void Queue<T>::push(const T &value)
+void Queue<T>::push(const T& value)
 {
     linkedList.append(value);
 }

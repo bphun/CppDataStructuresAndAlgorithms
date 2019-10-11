@@ -1,14 +1,14 @@
-#include "gtest/gtest.h"
 #include "../Heap.h"
-#include "../MinHeap.h"
 #include "../MaxHeap.h"
+#include "../MinHeap.h"
+#include "gtest/gtest.h"
 
-#include <string>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
@@ -45,8 +45,8 @@ TEST(MinHeapTest, add)
 
     EXPECT_EQ(heap.leftChild(0), 3);
     EXPECT_EQ(heap.rightChild(0), 2);
-    
+
     EXPECT_TRUE(heap.hasLeftChild(heap.getLeftChildIndex(0)));
-    
+
     EXPECT_EQ(heap.leftChild(heap.getLeftChildIndex(0)), 10);
 }

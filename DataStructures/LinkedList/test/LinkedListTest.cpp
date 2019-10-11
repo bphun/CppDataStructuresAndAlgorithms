@@ -1,8 +1,8 @@
-#include "gtest/gtest.h"
 #include "../LinkedList.h"
 #include "../LinkedListNode.h"
+#include "gtest/gtest.h"
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
@@ -130,7 +130,7 @@ TEST(LinkedListTest, prepend_FollowingDeleteHead)
     EXPECT_EQ(ll.first()->next->data, 2);
     EXPECT_EQ(ll.last()->data, 1);
 
-EXPECT_EQ(ll.count(), 3);
+    EXPECT_EQ(ll.count(), 3);
 
     ll.deleteHead();
 
@@ -151,10 +151,9 @@ TEST(LinkedListTest, addValueToSortedList)
     ll.addValueToSortedList(1);
     ll.addValueToSortedList(5);
 
-    LinkedListNode<int> *currNode = ll.first();
+    LinkedListNode<int>* currNode = ll.first();
 
-    while (currNode->next != nullptr)
-    {
+    while (currNode->next != nullptr) {
         ASSERT_TRUE(currNode->data < currNode->next->data);
 
         currNode = currNode->next;
@@ -349,10 +348,9 @@ TEST(LinkedListTest, sort)
 
     ll.sort();
 
-    LinkedListNode<int> *currNode = ll.first();
+    LinkedListNode<int>* currNode = ll.first();
 
-    while (currNode->next != nullptr)
-    {
+    while (currNode->next != nullptr) {
         ASSERT_TRUE(currNode->data < currNode->next->data);
 
         currNode = currNode->next;

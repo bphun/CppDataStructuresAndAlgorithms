@@ -1,7 +1,7 @@
-#include "gtest/gtest.h"
 #include "../DoublyLinkedList.h"
+#include "gtest/gtest.h"
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
@@ -25,7 +25,6 @@ TEST(DoublyLinkedListTest, prepend)
 
     EXPECT_EQ(dll.count(), 3);
 }
-
 
 TEST(DoublyLinkedListTest, append)
 {
@@ -61,7 +60,7 @@ TEST(DoublyLinkedListTest, removeNodeWithValue_RemoveHead)
 
     EXPECT_EQ(dll.last()->data, 3);
     EXPECT_EQ(dll.last()->prev->data, 2);
-    
+
     EXPECT_EQ(dll.count(), 2);
 }
 
@@ -159,7 +158,7 @@ TEST(DoublyLinkedListTest, removeTail)
 
     EXPECT_EQ(dll.last()->data, 2);
     EXPECT_EQ(dll.last()->prev->data, 1);
-    
+
     EXPECT_EQ(dll.count(), 2);
 }
 

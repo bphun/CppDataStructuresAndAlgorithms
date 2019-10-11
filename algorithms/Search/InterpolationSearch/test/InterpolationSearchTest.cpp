@@ -1,9 +1,9 @@
-#include "gtest/gtest.h"
 #include "../InterpolationSearch.h"
+#include "gtest/gtest.h"
 
 #define ARRAY_SIZE 1000
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
     srand(time(nullptr));
 
@@ -35,7 +35,7 @@ TEST(InterpolationSearch, Array_SearchValIsNotMemberOfArray)
 
 TEST(InterpolationSearch, PointerArray_SearchValIsMemberOfArray)
 {
-    int *array[ARRAY_SIZE] = {nullptr};
+    int* array[ARRAY_SIZE] = { nullptr };
     int randIndex = rand() % ARRAY_SIZE;
 
     for (size_t i = 0; i < ARRAY_SIZE; i++)
@@ -46,7 +46,7 @@ TEST(InterpolationSearch, PointerArray_SearchValIsMemberOfArray)
 
 TEST(InterpolationSearch, PointerArray_SearchValIsNotMemberOfArray)
 {
-    int *array[ARRAY_SIZE] = {nullptr};
+    int* array[ARRAY_SIZE] = { nullptr };
     int searchVal = ARRAY_SIZE + 1;
 
     for (size_t i = 0; i < ARRAY_SIZE; i++)

@@ -5,7 +5,7 @@
 using namespace std;
 
 template <typename T>
-bool linearSearch(T arr[], const T &searchVal, const size_t &arrSize)
+bool linearSearch(T arr[], const T& searchVal, const size_t& arrSize)
 {
     if (arrSize == 0)
         return false;
@@ -18,7 +18,7 @@ bool linearSearch(T arr[], const T &searchVal, const size_t &arrSize)
 }
 
 template <typename T>
-bool linearSearch(T **arr, const T &searchVal, const size_t &arrSize)
+bool linearSearch(T** arr, const T& searchVal, const size_t& arrSize)
 {
     if (arrSize == 0)
         return false;

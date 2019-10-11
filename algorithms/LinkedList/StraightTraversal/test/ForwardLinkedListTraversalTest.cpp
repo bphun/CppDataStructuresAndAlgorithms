@@ -1,10 +1,10 @@
-#include "gtest/gtest.h"
-#include "../../../../dataStructures/LinkedList/LinkedList.h"
 #include "../ForwardLinkedListTraversal.h"
+#include "../../../../dataStructures/LinkedList/LinkedList.h"
+#include "gtest/gtest.h"
 
 int counter = 1;
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

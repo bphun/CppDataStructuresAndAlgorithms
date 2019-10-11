@@ -1,9 +1,9 @@
-#include "gtest/gtest.h"
 #include "../JumpSearch.h"
+#include "gtest/gtest.h"
 
 #define ARRAY_SIZE 1000
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
     srand(time(nullptr));
 
@@ -35,7 +35,7 @@ TEST(JumpSearch, Array_SearchValIsNotMemberOfArray)
 
 TEST(JumpSearch, PointerArray_SearchValIsMemberOfArray)
 {
-    int *array[ARRAY_SIZE] = {nullptr};
+    int* array[ARRAY_SIZE] = { nullptr };
     int randIndex = rand() % ARRAY_SIZE;
 
     for (size_t i = 0; i < ARRAY_SIZE - 1; i++)
@@ -46,7 +46,7 @@ TEST(JumpSearch, PointerArray_SearchValIsMemberOfArray)
 
 TEST(JumpSearch, PointerArray_SearchValIsNotMemberOfArray)
 {
-    int *array[ARRAY_SIZE] = {nullptr};
+    int* array[ARRAY_SIZE] = { nullptr };
     int searchVal = ARRAY_SIZE + 1;
 
     for (size_t i = 0; i < ARRAY_SIZE; i++)
