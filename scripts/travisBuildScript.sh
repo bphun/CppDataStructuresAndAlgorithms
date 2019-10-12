@@ -1,5 +1,5 @@
 #!/bin/bash
-rootDir=$PWD
+rootDir=~$PWD
 CHANGED_FILES=$(git diff --name-only $TRAVIS_COMMIT_RANGE)
 echo $CHANGED_FILES
 
@@ -10,9 +10,9 @@ for file in $CHANGED_FILES; do
     cd $dir
 
     if [ -f "$CMakeLists.txt" ]; then    
-        ./$rootDir/scripts/buildProjectAtDir.sh $dir;
+        .$rootDir/scripts/buildProjectAtDir.sh $dir;
     elif [ -f "../CMakeLists.txt" ]; then    
-        ./$rootDir/scripts/buildProjectAtDir.sh $dir;
+        .$rootDir/scripts/buildProjectAtDir.sh $dir;
     fi
 
     cd $rootDir
