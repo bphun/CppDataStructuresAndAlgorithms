@@ -6,7 +6,7 @@
 int main(int argc, char** argv)
 {
     srand(time(nullptr));
-    cout << "sup" << endl;
+    
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
