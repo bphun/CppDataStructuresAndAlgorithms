@@ -11,6 +11,7 @@ script:
     dir=$(dirname $file);
     echo $dir;
     done
-  - if test -f "$dir/CMakeLists.txt"; then
+  - checkDir="$dir/CMakeLists.txt"
+  - if test -f "$checkDir"; then
     ./scripts/buildProjectAtDir.sh $dir
     fi
