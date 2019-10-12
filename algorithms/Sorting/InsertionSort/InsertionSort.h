@@ -6,12 +6,12 @@
 using namespace std;
 
 template <typename T, typename = typename enable_if<is_arithmetic<T>::value, T>::type>
-void insertionSort(T arr[], const size_t& arrSize)
+void insertionSort(T arr[], const int& arrSize)
 {
     T key;
-    size_t j;
+    int j;
 
-    for (size_t i = 1; i < arrSize; i++) {
+    for (int i = 1; i < arrSize; i++) {
         key = arr[i];
         j = i;
 
@@ -24,12 +24,12 @@ void insertionSort(T arr[], const size_t& arrSize)
 }
 
 template <typename T, typename = typename enable_if<is_arithmetic<T>::value, T>::type>
-void insertionSort(T* arr[], const size_t& arrSize)
+void insertionSort(T* arr[], const int& arrSize)
 {
     T key;
-    size_t j;
+    int j;
 
-    for (size_t i = 1; i < arrSize; i++) {
+    for (int i = 1; i < arrSize; i++) {
         key = *arr[i];
         j = i;
 
@@ -45,9 +45,9 @@ template <typename T, typename = typename enable_if<is_arithmetic<T>::value, T>:
 void insertionSort(vector<T> arr)
 {
     T key;
-    size_t j;
+    int j;
 
-    for (size_t i = 1; i < arr.size(); i++) {
+    for (int i = 1; i < arr.size(); i++) {
         key = arr[i];
         j = i;
 

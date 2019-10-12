@@ -6,12 +6,12 @@
 using namespace std;
 
 template <typename T, typename = typename enable_if<is_arithmetic<T>::value, T>::type>
-void merge(T arr[], const size_t& startIndex, const size_t& midIndex, const size_t& endIndex)
+void merge(T arr[], const int& startIndex, const int& midIndex, const int& endIndex)
 {
     T tmp[endIndex - startIndex + 1];
-    size_t i = startIndex;
-    size_t j = midIndex + 1;
-    size_t k = 0;
+    int i = startIndex;
+    int j = midIndex + 1;
+    int k = 0;
 
     while (i <= midIndex && j <= endIndex) {
         if (arr[i] <= arr[j]) {
@@ -36,16 +36,16 @@ void merge(T arr[], const size_t& startIndex, const size_t& midIndex, const size
         j++;
     }
 
-    for (size_t n = startIndex; n <= endIndex; n++) {
+    for (int n = startIndex; n <= endIndex; n++) {
         arr[n] = tmp[n - startIndex];
     }
 }
 
 template <typename T, typename = typename enable_if<is_arithmetic<T>::value, T>::type>
-void mergeSort(T arr[], const size_t& startIndex, const size_t& endIndex)
+void mergeSort(T arr[], const int& startIndex, const int& endIndex)
 {
     if (startIndex < endIndex) {
-        size_t midIndex = (startIndex + endIndex) / 2;
+        int midIndex = (startIndex + endIndex) / 2;
 
         mergeSort(arr, startIndex, midIndex);
         mergeSort(arr, midIndex + 1, endIndex);
@@ -55,12 +55,12 @@ void mergeSort(T arr[], const size_t& startIndex, const size_t& endIndex)
 }
 
 template <typename T, typename = typename enable_if<is_arithmetic<T>::value, T>::type>
-void merge(T* arr[], const size_t& startIndex, const size_t& midIndex, const size_t& endIndex)
+void merge(T* arr[], const int& startIndex, const int& midIndex, const int& endIndex)
 {
     T* tmp[endIndex - startIndex + 1];
-    size_t i = startIndex;
-    size_t j = midIndex + 1;
-    size_t k = 0;
+    int i = startIndex;
+    int j = midIndex + 1;
+    int k = 0;
 
     while (i <= midIndex && j <= endIndex) {
         if (*arr[i] <= *arr[j]) {
@@ -85,16 +85,16 @@ void merge(T* arr[], const size_t& startIndex, const size_t& midIndex, const siz
         j++;
     }
 
-    for (size_t n = startIndex; n <= endIndex; n++) {
+    for (int n = startIndex; n <= endIndex; n++) {
         arr[n] = tmp[n - startIndex];
     }
 }
 
 template <typename T, typename = typename enable_if<is_arithmetic<T>::value, T>::type>
-void mergeSort(T* arr[], const size_t& startIndex, const size_t& endIndex)
+void mergeSort(T* arr[], const int& startIndex, const int& endIndex)
 {
     if (startIndex < endIndex) {
-        size_t midIndex = (startIndex + endIndex) / 2;
+        int midIndex = (startIndex + endIndex) / 2;
 
         mergeSort(arr, startIndex, midIndex);
         mergeSort(arr, midIndex + 1, endIndex);
@@ -104,12 +104,12 @@ void mergeSort(T* arr[], const size_t& startIndex, const size_t& endIndex)
 }
 
 template <typename T, typename = typename enable_if<is_arithmetic<T>::value, T>::type>
-void merge(vector<T> arr, const size_t& startIndex, const size_t& midIndex, const size_t& endIndex)
+void merge(vector<T> arr, const int& startIndex, const int& midIndex, const int& endIndex)
 {
     T tmp[endIndex - startIndex + 1];
-    size_t i = startIndex;
-    size_t j = midIndex + 1;
-    size_t k = 0;
+    int i = startIndex;
+    int j = midIndex + 1;
+    int k = 0;
 
     while (i <= midIndex && j <= endIndex) {
         if (arr[i] <= arr[j]) {
@@ -134,16 +134,16 @@ void merge(vector<T> arr, const size_t& startIndex, const size_t& midIndex, cons
         j++;
     }
 
-    for (size_t n = startIndex; n <= endIndex; n++) {
+    for (int n = startIndex; n <= endIndex; n++) {
         arr[n] = tmp[n - startIndex];
     }
 }
 
 template <typename T, typename = typename enable_if<is_arithmetic<T>::value, T>::type>
-void mergeSort(vector<T> arr, const size_t& startIndex, const size_t& endIndex)
+void mergeSort(vector<T> arr, const int& startIndex, const int& endIndex)
 {
     if (startIndex < endIndex) {
-        size_t midIndex = (startIndex + endIndex) / 2;
+        int midIndex = (startIndex + endIndex) / 2;
 
         mergeSort(arr, startIndex, midIndex);
         mergeSort(arr, midIndex + 1, endIndex);
