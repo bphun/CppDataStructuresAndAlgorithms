@@ -108,7 +108,6 @@ TEST(InsertSort, PointerArraySort)
 TEST(InsertSort, VectorSort)
 {
     vector<int> arr(ARRAY_SIZE, 0);
-    size_t i = 0;
 
     while (arr.size() < ARRAY_SIZE) {
         int randNum = rand() % ARRAY_SIZE;
