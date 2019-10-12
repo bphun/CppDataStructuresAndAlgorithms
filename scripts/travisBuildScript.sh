@@ -1,11 +1,10 @@
 #!/bin/bash
 rootDir=$PWD
 CHANGED_FILES=$(git diff --name-only $TRAVIS_COMMIT_RANGE)
-echo $CHANGED_FILES
+echo "Changed Files: $CHANGED_FILES"
 
 for file in $CHANGED_FILES; do
     dir=$(dirname $file)
-    echo $dir
 
     cd $dir
 
