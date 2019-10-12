@@ -11,6 +11,4 @@ script:
     dir=$(dirname $file);
     echo $dir;
     done
-  - if [[ -f "$dir/CMakeLists.txt" ]]; then
-      ./scripts/buildProjectAtDir.sh $dir
-    fi
+  - [[ -f "$dir/CMakeLists.txt" ]] && ./scripts/buildProjectAtDir.sh $dir
