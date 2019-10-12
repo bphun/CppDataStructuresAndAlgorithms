@@ -1,8 +1,8 @@
 language: cpp
 
 install:
-  - sudo apt update
-  - sudo apt install cmake
+  # - sudo apt update
+  # - sudo apt install cmake
 
 script:
   - CHANGED_FILES=$(git diff --name-only $TRAVIS_COMMIT_RANGE)
