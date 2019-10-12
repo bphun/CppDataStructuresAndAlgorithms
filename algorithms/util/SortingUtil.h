@@ -1,13 +1,16 @@
 #ifndef SortingUtil_h
 #define SortingUtil_h
 
+#include <algorithm>
+#include <iterator>
 #include <vector>
 
 using namespace std;
 
-bool valueIsInArray(int arr[], const int& value, const size_t& arrSize)
+template <typename T>
+bool valueIsInArray(T arr[], const T& value, const size_t& arrSize)
 {
-    for (int i = 0; i < arrSize; i++) {
+    for (size_t i = 0; i < arrSize; i++) {
         if (arr[i] == value)
             return true;
     }
@@ -15,9 +18,10 @@ bool valueIsInArray(int arr[], const int& value, const size_t& arrSize)
     return false;
 }
 
-bool valueIsInPointerArray(int* arr[], const int& value, const size_t& arrSize)
+template <typename T>
+bool valueIsInPointerArray(T* arr[], const T& value, const size_t& arrSize)
 {
-    for (int i = 0; i < arrSize; i++) {
+    for (size_t i = 0; i < arrSize; i++) {
         if (*arr[i] == value)
             return true;
     }
@@ -25,10 +29,11 @@ bool valueIsInPointerArray(int* arr[], const int& value, const size_t& arrSize)
     return false;
 }
 
-bool arrayIsSorted(int arr[], const size_t& arrSize)
+template <typename T>
+bool arrayIsSorted(T arr[], const size_t& arrSize)
 {
-    int prev = arr[0];
-    for (int i = 1; i < arrSize; i++) {
+    T prev = arr[0];
+    for (size_t i = 1; i < arrSize; i++) {
         if (arr[i] < prev)
             return false;
         prev = arr[i];
@@ -37,10 +42,11 @@ bool arrayIsSorted(int arr[], const size_t& arrSize)
     return true;
 }
 
-bool pointerArrayIsSorted(int* arr[], const size_t& arrSize)
+template <typename T>
+bool pointerArrayIsSorted(T* arr[], const size_t& arrSize)
 {
-    int prev = *arr[0];
-    for (int i = 1; i < arrSize; i++) {
+    T prev = *arr[0];
+    for (size_t i = 1; i < arrSize; i++) {
         if (*arr[i] < prev)
             return false;
         prev = *arr[i];
@@ -49,10 +55,11 @@ bool pointerArrayIsSorted(int* arr[], const size_t& arrSize)
     return true;
 }
 
-bool vectorIsSorted(vector<int> arr)
+template <typename T>
+bool vectorIsSorted(const vector<T>& arr)
 {
-    int prev = arr[0];
-    for (int i = 1; i < arr.size(); i++) {
+    T prev = arr[0];
+    for (size_t i = 1; i < arr.size(); i++) {
         if (arr[i] < prev)
             return false;
         prev = arr[i];
