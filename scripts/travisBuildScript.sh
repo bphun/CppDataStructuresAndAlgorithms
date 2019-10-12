@@ -14,7 +14,7 @@ for file in $CHANGED_FILES; do
         ./scripts/buildProjectAtDir.sh $dir;
     elif [ -f "../CMakeLists.txt" ]; then    
         cd $rootDir
-        ./scripts/buildProjectAtDir.sh $dir;
+        ./scripts/buildProjectAtDir.sh ../$dir;
     fi
 done
 
