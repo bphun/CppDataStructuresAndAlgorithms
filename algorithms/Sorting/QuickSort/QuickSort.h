@@ -72,16 +72,10 @@ int partition(vector<T> arr, const int& startIndex, const int& endIndex)
     for (int j = startIndex; j < endIndex; j++) {
         if (arr[j] < pivot) {
             i++;
-            // T tmp = arr[i];
-            // arr[i] = arr[j];
-            // arr[j] = tmp;
             swap(arr[i], arr[j]);
         }
     }
-
-    // T tmp = arr[i + 1];
-    // arr[i + 1] = arr[endIndex];
-    // arr[endIndex] = tmp;
+    
     swap(arr[i + 1], arr[endIndex]);
 
     return i + 1;
