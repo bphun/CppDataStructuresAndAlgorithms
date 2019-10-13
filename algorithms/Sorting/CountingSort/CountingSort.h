@@ -28,9 +28,8 @@ void countingSort(T* arr[], const int& arrSize)
         counts[*arr[i]]++;
 
     int i = 0;
-    for (auto it = counts.begin(); it != counts.end(); it++) {
+    for (auto it = counts.begin(); it != counts.end(); it++)
         *arr[i++] = it->second;
-    }
 }
 
 template <typename T, typename = typename enable_if<is_arithmetic<T>::value, T>::type>
