@@ -25,7 +25,7 @@ void countingSort(T* arr[], const int& arrSize)
     map<T, int> counts;
 
     for (int i = 0; i < arrSize; i++)
-        counts[*garr[i]]++;
+        counts[*arr[i]]++;
 
     int i = 0;
     for (auto it = counts.begin(); it != counts.end(); it++) {
