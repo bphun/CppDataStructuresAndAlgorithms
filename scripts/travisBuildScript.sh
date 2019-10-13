@@ -8,11 +8,15 @@ for file in $CHANGED_FILES; do
 
     cd $dir
 
+    echo $dir
+
     if [ -f "$CMakeLists.txt" ]; then    
         cd $rootDir
+        echo "Building project at $dir"
         ./scripts/buildProjectAtDir.sh $dir;
     elif [ -f "../CMakeLists.txt" ]; then    
         cd $rootDir
+        echo "Building project at $dir/g../"
         ./scripts/buildProjectAtDir.sh $dir/../;
     fi
 done
