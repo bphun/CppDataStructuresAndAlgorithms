@@ -5,4 +5,5 @@ install:
   # - sudo apt install cmake
 
 script:
-  - ./scripts/travisBuildScript.sh
+  - ./scripts/updateAllCmakeLists.sh
+  - ./scripts/testAll.sh
