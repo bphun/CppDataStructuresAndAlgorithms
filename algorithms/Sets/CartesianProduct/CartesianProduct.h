@@ -6,7 +6,7 @@
 using namespace std;
 
 template <typename T>
-void cartesianProduct(vector<T> arrA, vector<T> arrB, vector<vector<T>>& result)
+void cartesianProduct(const vector<T>& arrA, const vector<T>& arrB, vector<vector<T>>& result)
 {
 
     for (int i = 0; i < arrA.size(); i++) {
