@@ -1,11 +1,8 @@
+#ifndef QueueTestHarness_h
+#define QueueTestHarness_h
+
 #include "../Queue.h"
 #include "gtest/gtest.h"
-
-int main(int argc, char** argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 TEST(QueueTest, checkEmpty_EmptyQueue)
 {
@@ -82,3 +79,5 @@ TEST(QueueTest, getBack_PopUntilEmpty)
     EXPECT_EQ(queue.front(), 2);
     EXPECT_EQ(queue.back(), 2);
 }
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef HashTableTestHarness_h
+#define HashTableTestHarness_h
+
 #include "../HashTable.h"
 #include "gtest/gtest.h"
 
@@ -5,12 +8,6 @@
 #include <string>
 
 using namespace std;
-
-int main(int argc, char** argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 TEST(HashTableTest, init)
 {
@@ -170,3 +167,5 @@ TEST(HashTableTest, clear)
     EXPECT_EQ(hashTable.bucketCount(), 0);
     EXPECT_EQ(hashTable.size(), 0);
 }
+
+#endif

@@ -1,12 +1,9 @@
+#ifndef LinkedListTestHarness_h
+#define LinkedListTestHarness_h
+
 #include "../LinkedList.h"
 #include "../LinkedListNode.h"
 #include "gtest/gtest.h"
-
-int main(int argc, char** argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 #include <string>
 
@@ -396,3 +393,5 @@ TEST(LinkedListTest, getSize)
 
     EXPECT_EQ(ll.count(), 2);
 }
+
+#endif

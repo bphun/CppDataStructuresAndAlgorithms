@@ -1,11 +1,8 @@
+#ifndef StackTestHarness_h
+#define StackTestHarness_h
+
 #include "../Stack.h"
 #include "gtest/gtest.h"
-
-int main(int argc, char** argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 TEST(StackTest, top)
 {
@@ -46,3 +43,5 @@ TEST(StackTest, empty)
 
     EXPECT_TRUE(stack.empty());
 }
+
+#endif

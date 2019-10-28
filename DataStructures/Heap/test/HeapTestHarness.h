@@ -1,3 +1,6 @@
+#ifndef HeapTestHarness_h
+#define HeapTestHarness_h
+
 #include "../Heap.h"
 #include "../MaxHeap.h"
 #include "../MinHeap.h"
@@ -7,12 +10,6 @@
 #include <string>
 
 using namespace std;
-
-int main(int argc, char** argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 TEST(MinHeapTest, init)
 {
@@ -50,3 +47,5 @@ TEST(MinHeapTest, add)
 
     EXPECT_EQ(heap.leftChild(heap.getLeftChildIndex(0)), 10);
 }
+
+#endif

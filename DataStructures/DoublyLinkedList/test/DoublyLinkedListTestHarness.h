@@ -1,11 +1,8 @@
+#ifndef DoublyLinkedListTestHarness_h
+#define DoublyLinkedListTestHarness_h
+
 #include "../DoublyLinkedList.h"
 #include "gtest/gtest.h"
-
-int main(int argc, char** argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 TEST(DoublyLinkedListTest, prepend)
 {
@@ -172,3 +169,5 @@ TEST(DoublyLinkedListTest, removeTail_EmptyList)
     EXPECT_EQ(dll.last(), nullptr);
     EXPECT_EQ(dll.count(), 0);
 }
+
+#endif
