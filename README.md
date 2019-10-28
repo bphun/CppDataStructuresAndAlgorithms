@@ -13,4 +13,9 @@ To build a single data structure or algorithm, navigate to the directory of the 
 
 Once you do that, you can run either run `make test` or `./${FolderName}Test` if you would like a more comprehensive breakdown of each of the tests being run. For example, if you want to run tests for the LinkedList class, run `./LinkedListTest`.
 
-To test all data structures and algorithms, ensure you are in the root directory of the project and run `./scripts/testAll.sh`. This will take a while.
+To test all data structures and algorithms, navigate to the **RunAllTestHarnesses** directory and then run the following:
+* `mkdir build`
+* `cd build`
+* `cmake ../`
+* `make`
+* `./RunAllTestHarnesses`
