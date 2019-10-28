@@ -1,8 +1,8 @@
 #!/bin/bash
 
 copyCMakeLists () {
-  cp $PWD/MasterCMakeLists/CMakeLists.txt.in $currDirectory
-  cp $PWD/MasterCMakeLists/CMakeLists.txt $currDirectory
+    cp $PWD/MasterCMakeLists/CMakeLists.txt.in $currDirectory
+    cp $PWD/MasterCMakeLists/CMakeLists.txt $currDirectory
 }
 
 export -f copyCMakeLists

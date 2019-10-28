@@ -33,22 +33,28 @@ runAction () {
 
 for i in algorithms/*/*
 do
+    if [ "$i" == "algorithms/util/SortingUtil.h" ]; then
+        continue
+    fi
+
     currDirectory=$i
     runAction
 done
 
 for i in dataStructures/*
 do
-  if [ "$i" == "dataStructures/Tree" ]; then
-    for d in $i/*
-    do
-        currDirectory=$i$d
-        runAction
-    done
-    continue
-  fi
+    if [ "$i" == "dataStructures/Tree" ]; then
+        for d in $i/*
+        do
+            currDirectory=$i$d
+            runAction
+        done
+        continue
+    fi
+
     currDirectory=$i
     runAction
+
 done
 
 if [ "$parallelExec" = true ]; then

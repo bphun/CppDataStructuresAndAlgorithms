@@ -6,7 +6,7 @@ homeDir=$PWD
 cd $projectDir
 
 if [ ! -d "build" ]; then
-  mkdir build
+    mkdir build
 fi
 
 cd build

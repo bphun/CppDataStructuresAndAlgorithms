@@ -15,6 +15,10 @@ export -f cleanup
 
 unset -f cleanup
 
+cd RunAllTestHarnesses/
+rm -rf build
+cd ../
+
 # for i in src/*/*
 # do
 #   currDirectory=$i
