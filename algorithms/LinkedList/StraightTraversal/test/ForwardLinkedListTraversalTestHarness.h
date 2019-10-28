@@ -3,7 +3,6 @@
 
 #include "../../../../dataStructures/LinkedList/LinkedList.h"
 #include "../ForwardLinkedListTraversal.h"
-#include "gtest/gtest.h"
 
 int counter = 1;
 

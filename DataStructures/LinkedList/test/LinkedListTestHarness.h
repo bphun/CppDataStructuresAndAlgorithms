@@ -3,7 +3,6 @@
 
 #include "../LinkedList.h"
 #include "../LinkedListNode.h"
-#include "gtest/gtest.h"
 
 #include <string>
 

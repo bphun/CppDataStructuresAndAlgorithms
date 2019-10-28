@@ -2,8 +2,7 @@
 #define QuickSortTestHarness_h
 
 #include "../../../util/SortingUtil.h"
-#include "../QuickSort.h"
-#include "gtest/gtest.h"
+#include "../QuickSort.h" 
 
 #define ARRAY_SIZE 1000
 

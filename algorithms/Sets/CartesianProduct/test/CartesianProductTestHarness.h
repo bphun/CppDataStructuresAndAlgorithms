@@ -1,15 +1,11 @@
-#include "../CartesianProduct.h"
-#include "gtest/gtest.h"
+#ifndef CartesianProductTestHarness_h
+#define CartesianProductTestHarness_h
 
+#include "../CartesianProduct.h"
+ 
 #include <iostream>
 
 using namespace std;
-
-int main(int argc, char** argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 TEST(CartesianProduct, test)
 {
@@ -28,3 +24,5 @@ TEST(CartesianProduct, test)
         }
     }
 }
+
+#endif

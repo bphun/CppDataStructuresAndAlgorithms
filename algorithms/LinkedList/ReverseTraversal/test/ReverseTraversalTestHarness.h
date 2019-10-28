@@ -3,7 +3,6 @@
 
 #include "../../../../dataStructures/LinkedList/LinkedList.h"
 #include "../ReverseLinkedListTraversal.h"
-#include "gtest/gtest.h"
 
 int maxVal = 50;
 

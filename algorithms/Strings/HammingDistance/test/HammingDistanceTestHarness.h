@@ -1,8 +1,7 @@
 #ifndef HammingDistanceTestHarness_h
 #define HammingDistanceTestHarness_h
 
-#include "../HammingDistance.h"
-#include "gtest/gtest.h"
+#include "../HammingDistance.h" 
 
 TEST(HammingDistance, SameStrings)
 {

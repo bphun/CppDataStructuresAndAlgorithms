@@ -3,7 +3,6 @@
 
 #include "../BubbleSort.h"
 #include "../../../util/SortingUtil.h"
-#include "gtest/gtest.h"
 
 #define ARRAY_SIZE 1000
 

@@ -2,7 +2,6 @@
 #define InterpolationSearchTestHarness_h
 
 #include "../InterpolationSearch.h"
-#include "gtest/gtest.h"
 
 #define ARRAY_SIZE 1000
 

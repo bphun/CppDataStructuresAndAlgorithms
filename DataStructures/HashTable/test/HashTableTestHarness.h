@@ -2,7 +2,6 @@
 #define HashTableTestHarness_h
 
 #include "../HashTable.h"
-#include "gtest/gtest.h"
 
 #include <iostream>
 #include <string>

@@ -2,7 +2,6 @@
 #define QueueTestHarness_h
 
 #include "../Queue.h"
-#include "gtest/gtest.h"
 
 TEST(QueueTest, checkEmpty_EmptyQueue)
 {

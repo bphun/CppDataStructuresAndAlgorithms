@@ -1,3 +1,4 @@
+#include "gtest/gtest.h"
 #include "ForwardLinkedListTraversalTestHarness.h"
 
 int main(int argc, char** argv)

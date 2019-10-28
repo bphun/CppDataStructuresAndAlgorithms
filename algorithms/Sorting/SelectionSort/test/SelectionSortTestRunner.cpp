@@ -1,3 +1,4 @@
+#include "gtest/gtest.h"
 #include "SelectionSortTestHarness.h"
 
 int main(int argc, char** argv)

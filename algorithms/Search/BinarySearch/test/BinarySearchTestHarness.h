@@ -2,7 +2,6 @@
 #define BinarySearchTestHarness_h
 
 #include "../BinarySearch.h"
-#include "gtest/gtest.h"
 
 #define ARRAY_SIZE 1000
 

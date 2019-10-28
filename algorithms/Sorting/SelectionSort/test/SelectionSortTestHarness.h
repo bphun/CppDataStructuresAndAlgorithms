@@ -3,7 +3,6 @@
 
 #include "../../../util/SortingUtil.h"
 #include "../SelectionSort.h"
-#include "gtest/gtest.h"
 
 #define ARRAY_SIZE 1000
 

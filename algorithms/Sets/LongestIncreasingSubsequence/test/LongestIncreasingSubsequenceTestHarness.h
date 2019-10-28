@@ -2,7 +2,6 @@
 #define LongestIncreasingSubsequenceTestHarness_h
 
 #include "../LongestIncreasingSubsequence.h"
-#include "gtest/gtest.h"
 
 #include <vector>
 

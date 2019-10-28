@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#define EMPTY_HEAP_EXCEPTION_MESSAGE "No elements in heap"
+#define EMPTY_HEAP_EXCEPTION_MESSAGE "No elements in heap to pop"
 
 template <typename T>
 class Heap {
@@ -32,15 +32,15 @@ public:
 
     void swapValues(const size_t&, const size_t&);
 
-    T peek() const;
-    T poll() const;
+    T peek();
+    T poll();
 
     vector<int> find(const T&);
 
     void add(const T&);
     void remove(const T&);
 
-    bool isEmpty() const;
+    bool isEmpty();
 
     void heapifyUp(const int& startIndex = -1);
     void heapifyDown(const size_t& startIndex = 0);
@@ -116,7 +116,7 @@ void Heap<T>::swapValues(const size_t& indexA, const size_t& indexB)
 }
 
 template <typename T>
-T Heap<T>::peek() const
+T Heap<T>::peek()
 {
     if (heap.size() == 0)
         throw std::out_of_range(EMPTY_HEAP_EXCEPTION_MESSAGE);
@@ -125,7 +125,7 @@ T Heap<T>::peek() const
 }
 
 template <typename T>
-T Heap<T>::poll() const
+T Heap<T>::poll()
 {
     if (heap.size() == 0)
         throw std::out_of_range(EMPTY_HEAP_EXCEPTION_MESSAGE);
@@ -190,7 +190,7 @@ void Heap<T>::remove(const T& value)
 }
 
 template <typename T>
-bool Heap<T>::isEmpty() const
+bool Heap<T>::isEmpty()
 {
     return this->heap.size() == 0;
 }

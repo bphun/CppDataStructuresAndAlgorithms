@@ -4,7 +4,6 @@
 #include "../Heap.h"
 #include "../MaxHeap.h"
 #include "../MinHeap.h"
-#include "gtest/gtest.h"
 
 #include <iostream>
 #include <string>

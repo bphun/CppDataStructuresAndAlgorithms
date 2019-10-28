@@ -1,7 +1,8 @@
 #ifndef LinearSearchTestHarness_h
 #define LinearSearchTestHarness_h
 
-#include "gtest/gtest.h"
+#include "../LinearSearch.h"
+ 
 #include <vector>
 
 using namespace std;

@@ -5,5 +5,8 @@ install:
   # - sudo apt install cmake
 
 script:
-  - ./scripts/updateAllCmakeLists.sh
-  - ./scripts/testAll.sh
+  - cd RunAllTestHarnesses/
+  - mkdir build/ && cd build/
+  - cmake ../
+  - make
+  - ./RunAllTestHarnesses

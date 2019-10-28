@@ -2,8 +2,7 @@
 #define ShellSortTestHarness_h
 
 #include "../../../util/SortingUtil.h"
-#include "../ShellSort.h"
-#include "gtest/gtest.h"
+#include "../ShellSort.h" 
 
 #define ARRAY_SIZE 1000
 

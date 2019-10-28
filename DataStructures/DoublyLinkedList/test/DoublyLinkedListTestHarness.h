@@ -2,7 +2,6 @@
 #define DoublyLinkedListTestHarness_h
 
 #include "../DoublyLinkedList.h"
-#include "gtest/gtest.h"
 
 TEST(DoublyLinkedListTest, prepend)
 {

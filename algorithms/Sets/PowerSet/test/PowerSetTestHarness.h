@@ -2,7 +2,6 @@
 #define PowerSetTestHarness_h
 
 #include "../PowerSet.h"
-#include "gtest/gtest.h"
 
 #include <algorithm>
 #include <vector>

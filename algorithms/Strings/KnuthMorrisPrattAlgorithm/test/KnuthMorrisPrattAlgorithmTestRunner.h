@@ -1,8 +1,7 @@
 #ifndef KnuthMorrisPrattAlgorithmTestRunner_h
 #define KnuthMorrisPrattAlgorithmTestRunner_h
 
-#include "../KnuthMorrisPrattAlgorithm.h"
-#include "gtest/gtest.h"
+#include "../KnuthMorrisPrattAlgorithm.h" 
 
 #include <string>
 
