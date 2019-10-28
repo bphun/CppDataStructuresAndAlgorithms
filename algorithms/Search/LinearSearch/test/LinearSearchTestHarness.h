@@ -1,15 +1,12 @@
-#include "../LinearSearch.h"
+#ifndef LinearSearchTestHarness_h
+#define LinearSearchTestHarness_h
+
 #include "gtest/gtest.h"
+#include <vector>
+
+using namespace std;
 
 #define ARRAY_SIZE 1000
-
-int main(int argc, char** argv)
-{
-    srand(time(nullptr));
-
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 TEST(LinearSearch, Array_SearchValIsMemberOfArray)
 {
@@ -94,3 +91,5 @@ TEST(LinearSearch, Vector_SearchValIsNotMemberOfArray)
 
     EXPECT_FALSE(linearSearch(array, searchVal));
 }
+
+#endif

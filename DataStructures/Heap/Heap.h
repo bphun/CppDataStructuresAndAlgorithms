@@ -11,9 +11,10 @@ using namespace std;
 template <typename T>
 class Heap {
 
-protected:
+private:
     vector<T> heap;
 
+protected:
     virtual bool pairIsInCorrectOrder(const T&, const T&) = 0;
 
 public:
@@ -32,9 +33,12 @@ public:
     void swapValues(const size_t&, const size_t&);
 
     T peek() const;
-    T poll();
+    T poll() const;
+
+    vector<int> find(const T&);
 
     void add(const T&);
+    void remove(const T&);
 
     bool isEmpty() const;
 
@@ -121,7 +125,7 @@ T Heap<T>::peek() const
 }
 
 template <typename T>
-T Heap<T>::poll()
+T Heap<T>::poll() const
 {
     if (heap.size() == 0)
         throw std::out_of_range(EMPTY_HEAP_EXCEPTION_MESSAGE);
@@ -144,10 +148,45 @@ T Heap<T>::poll()
 }
 
 template <typename T>
+vector<int> Heap<T>::find(const T& value)
+{
+    vector<int> foundIndices;
+
+    for (size_t i = 0; i < heap.size(); i++) {
+        if (heap[i] == value)
+            foundIndices.push_back(i);
+    }
+    return foundIndices;
+}
+
+template <typename T>
 void Heap<T>::add(const T& value)
 {
     this->heap.push_back(value);
     this->heapifyUp();
+}
+
+template <typename T>
+void Heap<T>::remove(const T& value)
+{
+    vector<int> indicesToRemove = find(value);
+
+    for (auto indexToRemove : indicesToRemove) {
+        if (indexToRemove == heap.size() - 1) {
+            heap.pop_back();
+        } else {
+            heap[indexToRemove] = heap.back();
+            heap.pop_back();
+
+            T parentItem = this->parent(indexToRemove);
+
+            if (hasLeftChild(indexToRemove) && (hasParent(indexToRemove) || pairIsInCorrectOrder(parentItem, heap[indexToRemove]))) {
+                heapifyDown(indexToRemove);
+            } else {
+                heapifyUp(indexToRemove);
+            }
+        }
+    }
 }
 
 template <typename T>

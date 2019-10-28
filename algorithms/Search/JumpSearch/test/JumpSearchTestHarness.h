@@ -1,15 +1,10 @@
+#ifndef JumpSearchTestHarness_h
+#define JumpSearchTestHarness_h
+
 #include "../JumpSearch.h"
 #include "gtest/gtest.h"
 
 #define ARRAY_SIZE 1000
-
-int main(int argc, char** argv)
-{
-    srand(time(nullptr));
-
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 TEST(JumpSearch, Array_SearchValIsMemberOfArray)
 {
@@ -76,3 +71,5 @@ TEST(JumpSearch, Vector_SearchValIsNotMemberOfArray)
 
     EXPECT_FALSE(jumpSearch(array, searchVal));
 }
+
+#endif

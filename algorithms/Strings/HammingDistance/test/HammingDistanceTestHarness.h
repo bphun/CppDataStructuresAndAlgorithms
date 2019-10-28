@@ -1,11 +1,8 @@
+#ifndef HammingDistanceTestHarness_h
+#define HammingDistanceTestHarness_h
+
 #include "../HammingDistance.h"
 #include "gtest/gtest.h"
-
-int main(int argc, char** argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 TEST(HammingDistance, SameStrings)
 {
@@ -29,3 +26,5 @@ TEST(HammingDistance, DifferentStrings)
 
     EXPECT_EQ(hammingDistance(strA, strB), 3);
 }
+
+#endif

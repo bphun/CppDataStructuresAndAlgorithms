@@ -1,15 +1,10 @@
+#ifndef InterpolationSearchTestHarness_h
+#define InterpolationSearchTestHarness_h
+
 #include "../InterpolationSearch.h"
 #include "gtest/gtest.h"
 
 #define ARRAY_SIZE 1000
-
-int main(int argc, char** argv)
-{
-    srand(time(nullptr));
-
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 TEST(InterpolationSearch, Array_SearchValIsMemberOfArray)
 {
@@ -76,3 +71,5 @@ TEST(InterpolationSearch, Vector_SearchValIsNotMemberOfArray)
 
     EXPECT_FALSE(interpolationSearch(array, searchVal));
 }
+
+#endif

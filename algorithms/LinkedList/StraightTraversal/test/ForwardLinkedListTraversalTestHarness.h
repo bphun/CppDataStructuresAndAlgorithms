@@ -1,14 +1,11 @@
-#include "../ForwardLinkedListTraversal.h"
+#ifndef ForwardLinkedListTraversalTestHarness_h
+#define ForwardLinkedListTraversalTestHarness_h
+
 #include "../../../../dataStructures/LinkedList/LinkedList.h"
+#include "../ForwardLinkedListTraversal.h"
 #include "gtest/gtest.h"
 
 int counter = 1;
-
-int main(int argc, char** argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 void forwardTraversalTestCallback(int inputVal)
 {
@@ -24,3 +21,5 @@ TEST(ForwardLinkedListTraversal, traversal)
 
     forwardTraversal(ll, forwardTraversalTestCallback);
 }
+
+#endif

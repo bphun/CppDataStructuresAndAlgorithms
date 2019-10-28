@@ -1,18 +1,13 @@
-#include "../CountingSort.h"
+#ifndef MergeSortTestHarness_h
+#define MergeSortTestHarness_h
+
 #include "../../../util/SortingUtil.h"
+#include "../MergeSort.h"
 #include "gtest/gtest.h"
 
 #define ARRAY_SIZE 1000
 
-int main(int argc, char** argv)
-{
-    srand(time(nullptr));
-
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
-
-TEST(CountingSort, ArraySort)
+TEST(MergeSort, ArraySort)
 {
     int arr[ARRAY_SIZE];
     size_t i = 0;
@@ -26,12 +21,12 @@ TEST(CountingSort, ArraySort)
         arr[i++] = randNum;
     }
 
-    countingSort(arr, ARRAY_SIZE);
+    mergeSort(arr, 0, ARRAY_SIZE - 1);
 
     EXPECT_TRUE(arrayIsSorted(arr, ARRAY_SIZE));
 }
 
-TEST(CountingSort, PointerArraySort)
+TEST(MergeSort, PointerArraySort)
 {
     int* arr[ARRAY_SIZE];
     size_t i = 0;
@@ -45,12 +40,12 @@ TEST(CountingSort, PointerArraySort)
         arr[i++] = new int(randNum);
     }
 
-    countingSort(arr, ARRAY_SIZE);
+    mergeSort(arr, 0, ARRAY_SIZE - 1);
 
     EXPECT_TRUE(pointerArrayIsSorted(arr, ARRAY_SIZE));
 }
 
-TEST(CountingSort, VectorSort)
+TEST(MergeSort, VectorSort)
 {
     vector<int> arr(ARRAY_SIZE, 0);
 
@@ -63,7 +58,9 @@ TEST(CountingSort, VectorSort)
         arr.push_back(randNum);
     }
 
-    countingSort(arr);
+    mergeSort(arr, 0, arr.size() - 1);
 
     EXPECT_TRUE(vectorIsSorted(arr));
 }
+
+#endif

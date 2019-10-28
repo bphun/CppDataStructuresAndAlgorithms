@@ -1,3 +1,6 @@
+#ifndef KnuthMorrisPrattAlgorithmTestRunner_h
+#define KnuthMorrisPrattAlgorithmTestRunner_h
+
 #include "../KnuthMorrisPrattAlgorithm.h"
 #include "gtest/gtest.h"
 
@@ -5,13 +8,8 @@
 
 using namespace std;
 
-int main(int argc, char** argv)
+TEST(KnuthMorrisPratt, test)
 {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
-
-TEST(KnuthMorrisPratt, test) {
     string str = "abcdefg";
     string pattern = "abc";
 
@@ -27,3 +25,5 @@ TEST(KnuthMorrisPratt, test) {
 
     EXPECT_EQ(knuthMorrisPratt(str, pattern), -1);
 }
+
+#endif

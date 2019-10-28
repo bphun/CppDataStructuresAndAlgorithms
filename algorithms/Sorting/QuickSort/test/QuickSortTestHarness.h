@@ -1,18 +1,13 @@
-#include "../InsertionSort.h"
+#ifndef QuickSortTestHarness_h
+#define QuickSortTestHarness_h
+
 #include "../../../util/SortingUtil.h"
+#include "../QuickSort.h"
 #include "gtest/gtest.h"
 
 #define ARRAY_SIZE 1000
 
-int main(int argc, char** argv)
-{
-    srand(time(nullptr));
-
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
-
-TEST(InsertSort, ArraySort)
+TEST(QuickSort, ArraySort)
 {
     int arr[ARRAY_SIZE];
     size_t i = 0;
@@ -26,12 +21,12 @@ TEST(InsertSort, ArraySort)
         arr[i++] = randNum;
     }
 
-    insertionSort(arr, ARRAY_SIZE);
+    quickSort(arr, 0, ARRAY_SIZE - 1);
 
     EXPECT_TRUE(arrayIsSorted(arr, ARRAY_SIZE));
 }
 
-TEST(InsertSort, PointerArraySort)
+TEST(QuickSort, PointerArraySort)
 {
     int* arr[ARRAY_SIZE];
     size_t i = 0;
@@ -45,12 +40,15 @@ TEST(InsertSort, PointerArraySort)
         arr[i++] = new int(randNum);
     }
 
-    insertionSort(arr, ARRAY_SIZE);
+    quickSort(arr, 0, ARRAY_SIZE - 1);
 
     EXPECT_TRUE(pointerArrayIsSorted(arr, ARRAY_SIZE));
+
+    for (int i = 0; i < ARRAY_SIZE; i++)
+        delete arr[i];
 }
 
-TEST(InsertSort, VectorSort)
+TEST(QuickSort, VectorSort)
 {
     vector<int> arr(ARRAY_SIZE, 0);
 
@@ -63,7 +61,9 @@ TEST(InsertSort, VectorSort)
         arr.push_back(randNum);
     }
 
-    insertionSort(arr);
+    quickSort(arr, 0, ARRAY_SIZE - 1);
 
     EXPECT_TRUE(vectorIsSorted(arr));
 }
+
+#endif

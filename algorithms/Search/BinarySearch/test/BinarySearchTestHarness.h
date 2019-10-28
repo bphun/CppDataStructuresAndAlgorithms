@@ -1,15 +1,10 @@
+#ifndef BinarySearchTestHarness_h
+#define BinarySearchTestHarness_h
+
 #include "../BinarySearch.h"
 #include "gtest/gtest.h"
 
 #define ARRAY_SIZE 1000
-
-int main(int argc, char** argv)
-{
-    srand(time(nullptr));
-    
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 TEST(BinarySearch, Array_SearchValIsMemberOfArray)
 {
@@ -76,3 +71,5 @@ TEST(BinarySearch, Vector_SearchValIsNotMemberOfArray)
 
     EXPECT_FALSE(binarySearch(array, searchVal));
 }
+
+#endif

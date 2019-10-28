@@ -1,3 +1,6 @@
+#ifndef PowerSetTestHarness_h
+#define PowerSetTestHarness_h
+
 #include "../PowerSet.h"
 #include "gtest/gtest.h"
 
@@ -5,12 +8,6 @@
 #include <vector>
 
 using namespace std;
-
-int main(int argc, char** argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 TEST(PowerSet, test)
 {
@@ -32,3 +29,5 @@ TEST(PowerSet, test)
     for (int i = 0; i < expectedResult.size(); i++)
         EXPECT_TRUE(find(result.begin(), result.end(), expectedResult[i]) != result.end());
 }
+
+#endif

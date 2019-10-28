@@ -1,14 +1,11 @@
+#ifndef ReverseTraversalTestHarness_h
+#define ReverseTraversalTestHarness_h
+
 #include "../../../../dataStructures/LinkedList/LinkedList.h"
 #include "../ReverseLinkedListTraversal.h"
 #include "gtest/gtest.h"
 
 int maxVal = 50;
-
-int main(int argc, char** argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 void reverseTraversalTestCallback(int inputVal)
 {
@@ -24,3 +21,5 @@ TEST(ReverseLinkedListTraversal, traversal)
 
     reverseTraversal(ll, reverseTraversalTestCallback);
 }
+
+#endif

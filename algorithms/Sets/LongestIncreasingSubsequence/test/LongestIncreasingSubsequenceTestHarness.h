@@ -1,15 +1,12 @@
+#ifndef LongestIncreasingSubsequenceTestHarness_h
+#define LongestIncreasingSubsequenceTestHarness_h
+
 #include "../LongestIncreasingSubsequence.h"
 #include "gtest/gtest.h"
 
 #include <vector>
 
 using namespace std;
-
-int main(int argc, char** argv)
-{
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
 
 TEST(LongestIncreasingSubsequence, test)
 {
@@ -26,3 +23,5 @@ TEST(LongestIncreasingSubsequence, test)
     vector<int> arr3 = { 3, 4, -1, 0, 6, 2, 3 };
     EXPECT_EQ(longestIncreasingSubsequence(arr3), 3);
 }
+
+#endif

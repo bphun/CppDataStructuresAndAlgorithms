@@ -1,18 +1,13 @@
-#include "../BubbleSort.h"
+#ifndef ShellSortTestHarness_h
+#define ShellSortTestHarness_h
+
 #include "../../../util/SortingUtil.h"
+#include "../ShellSort.h"
 #include "gtest/gtest.h"
 
 #define ARRAY_SIZE 1000
 
-int main(int argc, char** argv)
-{
-    srand(time(nullptr));
-
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
-
-TEST(BubbleSort, ArraySort)
+TEST(ShellSort, ArraySort)
 {
     int arr[ARRAY_SIZE];
     size_t i = 0;
@@ -26,12 +21,12 @@ TEST(BubbleSort, ArraySort)
         arr[i++] = randNum;
     }
 
-    bubbleSort(arr, ARRAY_SIZE);
+    shellSort(arr, ARRAY_SIZE);
 
     EXPECT_TRUE(arrayIsSorted(arr, ARRAY_SIZE));
 }
 
-TEST(BubbleSort, PointerArraySort)
+TEST(ShellSort, PointerArraySort)
 {
     int* arr[ARRAY_SIZE];
     size_t i = 0;
@@ -45,12 +40,12 @@ TEST(BubbleSort, PointerArraySort)
         arr[i++] = new int(randNum);
     }
 
-    bubbleSort(arr, ARRAY_SIZE);
+    shellSort(arr, ARRAY_SIZE);
 
     EXPECT_TRUE(pointerArrayIsSorted(arr, ARRAY_SIZE));
 }
 
-TEST(BubbleSort, VectorSort)
+TEST(ShellSort, VectorSort)
 {
     vector<int> arr(ARRAY_SIZE, 0);
 
@@ -63,7 +58,9 @@ TEST(BubbleSort, VectorSort)
         arr.push_back(randNum);
     }
 
-    bubbleSort(arr);
+    shellSort(arr);
 
     EXPECT_TRUE(vectorIsSorted(arr));
 }
+
+#endif
