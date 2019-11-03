@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# currDirectory=''
-# homedir=$PWD
+# Removes all build directories from every folder in dataStructures/ and algorithms/
 
 cleanup () {
     cd $currDirectory
@@ -18,23 +17,3 @@ unset -f cleanup
 cd RunAllTestHarnesses/
 rm -rf build
 cd ../
-
-# for i in src/*/*
-# do
-#   currDirectory=$i
-#   cleanup
-# done
-
-# for i in DataStructures/*
-# do
-#   if [ "$i" == "DataStructures/Tree" ]; then
-#     for d in $i/*
-#     do
-#       currDirectory=$d
-#       cleanup
-#     done
-#     continue
-#   fi
-#   currDirectory=$i
-#   cleanup
-# done

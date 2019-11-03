@@ -1,14 +1,12 @@
 #!/bin/bash
 
+# cd's into every directory found in dataStructures/ and algorithms/ and runs a command.
+# This command can be specified by providing its name in the command line arguments
+
 action=$1
 homeDirectory=$PWD
 currDirectory=''
 kernel=`uname`
-
-# if [[ -z $action ]]; then
-#     echo "No action specified"
-#     exit 0
-# fi
 
 if [ "$2" == "-p" ] || [ "$2" == "--parallel" ]; then
     parallelExec=true
