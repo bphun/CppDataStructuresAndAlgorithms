@@ -9,15 +9,14 @@ class Queue {
     LinkedList<T> linkedList;
 
 public:
-    bool empty() const;
-
-    size_t size() const;
-
-    T& front() const;
-    T& back() const;
-    void pop();
+    T& first() const;
+    T& last() const;
 
     void push(const T&);
+    void pop();
+
+    bool empty() const;
+    size_t size() const;
 };
 
 template <typename T>
@@ -33,13 +32,13 @@ size_t Queue<T>::size() const
 }
 
 template <typename T>
-T& Queue<T>::front() const
+T& Queue<T>::first() const
 {
     return linkedList.first()->data;
 }
 
 template <typename T>
-T& Queue<T>::back() const
+T& Queue<T>::last() const
 {
     return linkedList.last()->data;
 }

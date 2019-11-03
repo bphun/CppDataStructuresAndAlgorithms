@@ -33,27 +33,27 @@ TEST(QueueTest, checkSize)
     EXPECT_EQ(queue.size(), 1);
 }
 
-TEST(QueueTest, getFront)
+TEST(QueueTest, getFirst)
 {
     Queue<int> queue;
 
     queue.push(1);
     queue.push(2);
 
-    EXPECT_EQ(queue.front(), 1);
+    EXPECT_EQ(queue.first(), 1);
 }
 
-TEST(QueueTest, getBack)
+TEST(QueueTest, getLast)
 {
     Queue<int> queue;
 
     queue.push(1);
     queue.push(2);
 
-    EXPECT_EQ(queue.back(), 2);
+    EXPECT_EQ(queue.last(), 2);
 }
 
-TEST(QueueTest, getBack_PopFirst)
+TEST(QueueTest, getLast_PopFirst)
 {
     Queue<int> queue;
 
@@ -62,11 +62,11 @@ TEST(QueueTest, getBack_PopFirst)
 
     queue.pop();
 
-    EXPECT_EQ(queue.front(), 2);
-    EXPECT_EQ(queue.back(), 2);
+    EXPECT_EQ(queue.first(), 2);
+    EXPECT_EQ(queue.last(), 2);
 }
 
-TEST(QueueTest, getBack_PopUntilEmpty)
+TEST(QueueTest, getLast_PopUntilEmpty)
 {
     Queue<int> queue;
 
@@ -75,8 +75,8 @@ TEST(QueueTest, getBack_PopUntilEmpty)
 
     queue.pop();
 
-    EXPECT_EQ(queue.front(), 2);
-    EXPECT_EQ(queue.back(), 2);
+    EXPECT_EQ(queue.first(), 2);
+    EXPECT_EQ(queue.last(), 2);
 }
 
 #endif

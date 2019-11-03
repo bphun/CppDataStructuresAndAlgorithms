@@ -3,7 +3,7 @@
 
 #include "../Stack.h"
 
-TEST(StackTest, top)
+TEST(StackTest, first)
 {
     Stack<int> stack;
 
@@ -11,15 +11,15 @@ TEST(StackTest, top)
     stack.push(2);
     stack.push(3);
 
-    EXPECT_EQ(stack.top(), 3);
+    EXPECT_EQ(stack.first(), 3);
     EXPECT_EQ(stack.size(), 3);
 
     stack.pop();
-    EXPECT_EQ(stack.top(), 2);
+    EXPECT_EQ(stack.first(), 2);
     EXPECT_EQ(stack.size(), 2);
 
     stack.pop();
-    EXPECT_EQ(stack.top(), 1);
+    EXPECT_EQ(stack.first(), 1);
     EXPECT_EQ(stack.size(), 1);
 }
 
