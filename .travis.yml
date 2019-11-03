@@ -1,9 +1,5 @@
 language: cpp
 
-install:
-  # - sudo apt update
-  # - sudo apt install cmake
-
 script:
   - cd RunAllTestHarnesses/
   - mkdir build/ && cd build/
