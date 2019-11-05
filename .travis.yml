@@ -1,8 +1,8 @@
 language: cpp
 
 script:
-  - cd RunAllTestHarnesses/
+  - cd runAllTestHarnesses/
   - mkdir build/ && cd build/
   - cmake ../
   - make
-  - ./RunAllTestHarnesses
+  - ./runAllTestHarnesses
