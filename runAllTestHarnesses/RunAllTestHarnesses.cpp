@@ -21,7 +21,8 @@
 #include "../algorithms/Sorting/ShellSort/test/ShellSortTestHarness.h"
 
 #include "../algorithms/Strings/HammingDistance/test/HammingDistanceTestHarness.h"
-#include "../algorithms/Strings/KnuthMorrisPrattAlgorithm/test/KnuthMorrisPrattAlgorithmTestRunner.h"
+#include "../algorithms/Strings/KnuthMorrisPrattAlgorithm/test/KnuthMorrisPrattAlgorithmTestHarness.h"
+#include "../algorithms/Strings/LevenshteinDistance/test/LevenshteinStringDistanceTestHarness.h"
 
 #include "../dataStructures/DoublyLinkedList/test/DoublyLinkedListTestHarness.h"
 #include "../dataStructures/HashTable/test/HashTableTestHarness.h"

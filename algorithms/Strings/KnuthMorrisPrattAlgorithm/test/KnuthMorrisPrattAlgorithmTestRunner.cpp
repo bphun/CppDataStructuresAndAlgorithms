@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "KnuthMorrisPrattAlgorithmTestRunner.h"
+#include "KnuthMorrisPrattAlgorithmTestHarness.h"
 
 int main(int argc, char** argv)
 {
